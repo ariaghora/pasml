@@ -8,7 +8,7 @@ X := Dataset[[_ALL_, [0, 1, 2, 3]]];
 y := Dataset[[_ALL_, 4]];
 ```
 
-## Clustering learning
+## Clustering 
 ```pascal
 kmeans := TKMeans.Create(3);
 kmeans.Fit(X);
@@ -16,7 +16,7 @@ WriteLn('Clustering result:');
 PrintMultiArray(kmeans.Predict(X));
 ```
 
-## Classification learning
+## Classification 
 ```pascal
 nb := TNaiveBayesClassifier.Create;
 nb.Fit(X, y);
