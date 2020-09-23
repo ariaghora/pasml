@@ -5,10 +5,10 @@ unit unsupervised.kmeans;
 interface
 
 uses
-  multiarray, Math, numerik, SysUtils;
+  multiarray, Math, numerik, common;
 
 type
-  TKMeans = class
+  TKMeans = class(TBaseUnsupervisedLearner)
   private
     Means: TMultiArray;
   public
@@ -16,8 +16,8 @@ type
     NumCluster: longint;
     NIter: longint;
     constructor Create(ANumCluster: longint; ANumIter: longint = 10);
-    function Fit(X: TMultiArray): TKMeans;
-    function Predict(X: TMultiArray): TMultiArray;
+    function Fit(X: TMultiArray): TKMeans; override;
+    function Predict(X: TMultiArray): TMultiArray; override;
   end;
 
 implementation
