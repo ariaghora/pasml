@@ -1,5 +1,5 @@
 # PasML
-A collection of machine learning libraries for object pascal
+A collection of machine learning algorithms for object pascal
 
 ## Numerik compatibility
 ```pascal
