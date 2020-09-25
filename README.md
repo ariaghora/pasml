@@ -12,7 +12,7 @@ y := Dataset[[_ALL_, 4]];
 ### Implemented algorithms
 |Model|Notes|
 |---|---|
-|K-Means||
+|K-Means|Only random centroid initialization. Gladly accept your contribution.|
 
 ```pascal
 kmeans := TKMeans.Create(3);
