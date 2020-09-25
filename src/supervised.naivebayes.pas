@@ -27,7 +27,7 @@ function TNaiveBayesClassifier.Fit(X, y: TMultiArray): TBaseSupervisedLearner;
 var
   i: integer;
 begin
-  UniqueClasses := Unique(y);
+  UniqueClasses := Unique(y).UniqueValues;
   SetLength(SubsetPerClass, UniqueClasses.Size);
   SetLength(MuPerClass, UniqueClasses.Size);
   SetLength(SigPerClass, UniqueClasses.Size);
