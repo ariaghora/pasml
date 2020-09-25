@@ -3,4 +3,6 @@
 *.lpr
 *.lpi
 *.lps
+*.o
+*.ppu
 lib/
