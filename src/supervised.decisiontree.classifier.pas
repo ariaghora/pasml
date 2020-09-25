@@ -30,7 +30,6 @@ type
     Right: TTreeNode;
   public
     constructor Create(AIsLeaf: boolean=False);
-    destructor Destroy; override;
   end;
   TNodeList = specialize TFPGObjectList<TTreeNode>;
 
@@ -69,11 +68,6 @@ constructor TTreeNode.Create(AIsLeaf: boolean);
 begin
   IsLeaf := AIsLeaf;
   NodeList.Add(self);
-end;
-
-destructor TTreeNode.Destroy;
-begin
-  inherited Destroy;
 end;
 
 { TDecisionTreeClassifier }
