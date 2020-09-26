@@ -37,7 +37,7 @@ WriteLn(Mean(pred = Ravel(y)).Item);
 ```
 
 ## Integration with gnuplot
-PasML has gnuplot integration support. Currently only scatter and line plots are supported.
+PasML has gnuplot integration support. Please ensure that you have installed gnuplot and add the executable path to the environment variable. Currently only scatter and line plots are supported.
 ```pascal
 fig := TFigure.Create('Iris Flower Features', 'Petal length', 'Petal width');
 fig.AddScatterPlot(X[[_ALL_, [2, 3]]].SliceBool([y = 0]), 'Iris Setosa');
