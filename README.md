@@ -1,5 +1,5 @@
 # PasML
-A collection of machine learning algorithms for object pascal
+A collection of machine learning algorithms for object pascal.
 
 ## Implemented algorithms
 |Category|Type|Model|Notes|
@@ -35,6 +35,21 @@ pred := nb.Predict(X);
 WriteLn('Accuracy:');
 WriteLn(Mean(pred = Ravel(y)).Item);
 ```
+
+## Integration with gnuplot
+PasML has gnuplot integration support. Currently only scatter and line plots are supported.
+```pascal
+fig := TFigure.Create('Iris Flower Features', 'Petal length', 'Petal width');
+fig.AddScatterPlot(X[[_ALL_, [2, 3]]].SliceBool([y = 0]), 'Iris Setosa');
+fig.AddScatterPlot(X[[_ALL_, [2, 3]]].SliceBool([y = 1]), 'Iris Virginica');
+fig.AddScatterPlot(X[[_ALL_, [2, 3]]].SliceBool([y = 2]), 'Iris Versicolor');
+fig.LegendPosition := lpLeftTop;
+fig.Show;
+
+fig.Free;                                                                    
+```
+
+<img src="assets/plot_example.jpg" width=400px></img>
 
 ## Note
 - PasML requires [numerik](https://github.com/ariaghora/numerik), so you should install it first. Refer to numerik installation [guide](https://github.com/ariaghora/numerik#installation).
