@@ -1,6 +1,14 @@
 # PasML
 A collection of machine learning algorithms for object pascal
 
+## Implemented algorithms
+|Category|Type|Model|Notes|
+|---|---|---|---|
+|Unsupervised|Clustering|K-Means|Only random centroid initialization. Gladly accept your contribution.|
+|Supervised|Classification|Decision Tree|C4.5 implementation. Continuous data handling only for now.|
+|Supervised|Classification|Naive Bayes|Gaussian naive bayes|
+
+
 ## Numerik compatibility
 ```pascal
 Dataset := ReadCSV('datasets/iris.csv');
@@ -8,11 +16,7 @@ X := Dataset[[_ALL_, [0, 1, 2, 3]]];
 y := Dataset[[_ALL_, 4]];
 ```
 
-## Clustering 
-### Implemented algorithms
-|Model|Notes|
-|---|---|
-|K-Means|Only random centroid initialization. Gladly accept your contribution.|
+## Clustering example
 
 ```pascal
 kmeans := TKMeans.Create(3);
@@ -21,12 +25,7 @@ WriteLn('Clustering result:');
 PrintMultiArray(kmeans.Predict(X));
 ```
 
-## Classification 
-### Implemented algorithms
-|Model|Notes|
-|---|---|
-|Naive Bayes|Gaussian naive bayes|
-|Decision Tree|C4.5 implementation. Continuous data handling only for now.|
+## Classification example
 
 ```pascal
 nb := TNaiveBayesClassifier.Create;
@@ -34,9 +33,8 @@ nb.Fit(X, y);
 pred := nb.Predict(X);
 
 WriteLn('Accuracy:');
-PrintMultiArray(Mean(pred = Ravel(y)));
+WriteLn(Mean(pred = Ravel(y)).Item);
 ```
-
 
 ## Note
 - PasML requires [numerik](https://github.com/ariaghora/numerik), so you should install it first. Refer to numerik installation [guide](https://github.com/ariaghora/numerik#installation).
