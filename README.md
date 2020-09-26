@@ -26,7 +26,7 @@ PrintMultiArray(kmeans.Predict(X));
 |Model|Notes|
 |---|---|
 |Naive Bayes|Gaussian naive bayes|
-|Decision Tree|C4.5 implementation|
+|Decision Tree|C4.5 implementation. Continuous data handling only for now.|
 
 ```pascal
 nb := TNaiveBayesClassifier.Create;
