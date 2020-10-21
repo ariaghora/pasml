@@ -7,6 +7,7 @@ A collection of machine learning algorithms for object pascal.
 |Unsupervised|Clustering|K-Means|Only random centroid initialization. Gladly accept your contribution.|
 |Supervised|Classification|Decision Tree|C4.5 implementation. Continuous data handling only for now.|
 |Supervised|Classification|Naive Bayes|Gaussian naive bayes|
+|Supervised|Regression|MLP Regressor|Multi-layer perceptron regressor. Requires noe.|
 
 
 ## Numerik compatibility
