@@ -47,7 +47,7 @@ function TNaiveBayesClassifier.PXGivenY(X: TMultiArray; y: longint): TMultiArray
 var
   Tmp: TMultiArray;
 begin
-  Tmp := 1 / (Sqrt(2 * Pi * SigPerClass[y]));
+  Tmp := 1 / ((Sqrt(2 * Pi * SigPerClass[y]+0.0001)));
   Tmp := Tmp * Exp((-(X - MuPerClass[y]) ** 2) / (2 * SigPerClass[y]));
   Exit(ReduceAlongAxis(tmp, @Multiply, 1, True));
 end;
