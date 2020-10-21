@@ -81,9 +81,8 @@ begin
   UniqueLabel := Unique(y).UniqueValues;
   SetLength(probs, UniqueLabel.Size);
   for i := 0 to UniqueLabel.Size - 1 do
-  begin
     probs[i] := (Sum(y = UniqueLabel.Get(i)) / y.Size).Item;
-  end;
+
   Exit(Sum(TMultiArray(probs) * -numerik.Log2(probs)).Item);
 end;
 
@@ -143,7 +142,9 @@ begin
   if X[[0, ATree.SplitCol]].Item <= ATree.SplitVal then
     Answer := ATree.Left
   else
+  begin
     Answer := ATree.Right;
+  end;
 
   if (Answer.Right=nil) and (Answer.Left=nil) then
   begin
