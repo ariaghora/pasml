@@ -23,6 +23,7 @@ type
     constructor Create(aFigureTitle, aXLabel, aYLabel: string);
     destructor Destroy; override;
     procedure AddPlot(X: TMultiArray; PlotType, PlotLabel: string);
+    procedure AddLinePlot(X: TMultiArray; PlotLabel: string);
     procedure AddScatterPlot(X: TMultiArray; PlotLabel: string; PlotType: integer = 7);
     procedure Show;
   end;
@@ -58,6 +59,11 @@ begin
   fn := Format('__MAT_TMP_%d__', [PlotCount]);
   MatToStringList(X, ' ').SaveToFile(fn);
   PlotScript.Add(Format('''%s'' with %s title ''%s'',', [fn, PlotType, PlotLabel]));
+end;
+
+procedure TFigure.AddLinePlot(X: TMultiArray; PlotLabel: string);
+begin
+  AddPlot(X, 'line', PlotLabel);
 end;
 
 procedure TFigure.AddScatterPlot(X: TMultiArray; PlotLabel: string; PlotType: integer);
